@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="./assets/img/u=2920814812,107018119&fm=26&gp=0.jpg" alt="">
+    </div>
+    <div class="content-wrap">
+        <div class="content-title">
+            <div class="title-l">
+                <h1>这是是一个标题</h1>
+                <h1>这里是另一个标题</h1>
+            </div>
+            <div class="title-r">
+                <h1>这是右边的标题</h1>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="content-l">
+                这是右边的内容
+            </div>
+            <div class="content-r">
+                <div class="r1">第一个</div>
+                <div class="r2">第二个</div>
+                <div class="r3">第三个</div>
+                <div class="r4">第四个</div>
+            </div>
+        </div>
+    </div>
+    <!-- 这里面是轮播图 -->
+    <div style="display: flex;">
+        <!-- 左边 -->
+        <div style="flex: 1;">这里是左边</div>
+        <div style="width: 1000px; height: 500px;">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./assets/img/timg.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./assets/img/timg (1).jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./assets/img/timg (2).jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./assets/img/timg (1).jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./assets/img/timg.jpg" alt=""></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <div class="btn">按钮下</div>
+    <div class="btn1">按钮上</div>
+</body>
+
+</html>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+<script>
+    window.onload = function () {
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true,//可选选项，自动滑动
+            effect: 'coverflow',
+            slidesPerView: 3,
+            centeredSlides: true,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+
+        //自定义按钮事件
+        document.querySelector('.btn').onclick = () => {
+            //点击按钮实现下一页
+            mySwiper.slideNext();
+
+        }
+        document.querySelector('.btn1').onclick = () => {
+            //点击按钮实现下一页
+            mySwiper.slidePrev();
+
+        }
+    }
+
+</script>
